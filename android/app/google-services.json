@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "852068769352",
+    "project_id": "paybiz-14ts",
+    "storage_bucket": "paybiz-14ts.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:852068769352:android:c1ef23b9dee6f471b0027d",
+        "android_client_info": {
+          "package_name": "com.paybiz.app"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD93WLB-9fKbB6GB7riEuFhL3mkmW4WyJw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
