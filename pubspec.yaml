@@ -21,6 +21,7 @@ dependencies:
   flutter_screenutil: ^5.9.3
   google_fonts: ^6.2.1
   tutorial_coach_mark: ^1.2.12
+  flutter_dotenv: ^5.0.2
 
   # Existing dependencies
   cloud_firestore: ^5.6.0

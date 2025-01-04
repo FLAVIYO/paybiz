@@ -50,19 +50,19 @@ class DefaultFirebaseOptions {
   }
 
   static const FirebaseOptions android = FirebaseOptions(
-    apiKey: 'AIzaSyD93WLB-9fKbB6GB7riEuFhL3mkmW4WyJw',
-    appId: '1:852068769352:android:c1ef23b9dee6f471b0027d',
-    messagingSenderId: '852068769352',
-    projectId: 'paybiz-14ts',
-    storageBucket: 'paybiz-14ts.firebasestorage.app',
+    apiKey: 'ANDROID_API_KEY_PLACEHOLDER',
+    appId: 'ANDROID_APP_ID_PLACEHOLDER',
+    messagingSenderId: 'ANDROID_MESSAGING_SENDER_ID_PLACEHOLDER',
+    projectId: 'ANDROID_PROJECT_ID_PLACEHOLDER',
+    storageBucket: 'ANDROID_STORAGE_BUCKET_PLACEHOLDER',
   );
 
   static const FirebaseOptions ios = FirebaseOptions(
-    apiKey: 'AIzaSyC2lPW07IRLDaNBld6Mr9v1xD4WLfTOMps',
-    appId: '1:852068769352:ios:8f895ab6b3b1e364b0027d',
-    messagingSenderId: '852068769352',
-    projectId: 'paybiz-14ts',
-    storageBucket: 'paybiz-14ts.firebasestorage.app',
-    iosBundleId: 'com.example.paybiz',
+    apiKey: 'IOS_API_KEY_PLACEHOLDER',
+    appId: 'IOS_APP_ID_PLACEHOLDER',
+    messagingSenderId: 'IOS_MESSAGING_SENDER_ID_PLACEHOLDER',
+    projectId: 'IOS_PROJECT_ID_PLACEHOLDER',
+    storageBucket: 'IOS_STORAGE_BUCKET_PLACEHOLDER',
+    iosBundleId: 'IOS_BUNDLE_ID_PLACEHOLDER',
   );
 }
