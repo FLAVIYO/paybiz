@@ -1,78 +1,115 @@
+import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:paybiz/core/app/routes.dart';
 import 'package:paybiz/ui/theme/colors.dart';
+import 'package:paybiz/ui/theme/theme_data.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-class UnAuthenticatedScreen extends StatelessWidget {
-  const UnAuthenticatedScreen({super.key});
+class UnauthenticatedView extends StatelessWidget {
+  const UnauthenticatedView({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Padding(
-        padding: const EdgeInsets.all(16.0),
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            Image.asset('assets/images/unauthview.PNG', height: 450.h),
-            const SizedBox(height: 20),
-            ElevatedButton.icon(
-              onPressed: () {
-                Navigator.pushReplacementNamed(context, Routes.login);
-              },
-              // icon: Icon(Icons.email_outlined, size: 20.h),
-              label: const Text('Continue with LogIn'),
-              style: ElevatedButton.styleFrom(
-                backgroundColor: const Color(0xff0D6EFD),
-                foregroundColor: AppColors.white,
-                side: const BorderSide(color: AppColors.blue),
-                padding: EdgeInsets.symmetric(vertical: 12.h, horizontal: 14.w),
+      backgroundColor: AppColors.lightBackground,
+      body: SafeArea(
+        child: Padding(
+          padding: EdgeInsets.symmetric(horizontal: 20.w, vertical: 40.h),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: [
+              // Logo
+              Center(
+                child: Column(
+                  children: [
+                    Image.asset(
+                      'assets/images/onboard1.PNG',
+                      height: 350.h,
+                    ),
+                  ],
+                ),
               ),
-            ),
-            Spacer(),
-            Text(
-              'Simplify your finances',
-              textAlign: TextAlign.center,
-              style: Theme.of(context).textTheme.bodyLarge?.copyWith(
-                    fontWeight: FontWeight.bold,
-                    fontSize: 20.sp,
-                    color: Colors.black, // Set text color to white
-                  ),
-            ),
-            Text(
-              'With just one tap at a time',
-              textAlign: TextAlign.center,
-              style: Theme.of(context).textTheme!.bodyLarge?.copyWith(
-                    fontWeight: FontWeight.w700,
-                    fontSize: 20.sp,
-                    color: Colors.black, // Set text color to white
-                  ),
-            ),
-            const SizedBox(height: 8),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                Text(
-                  "Are you a New User? ",
-                  style: Theme.of(context).textTheme.bodyLarge?.copyWith(
-                        color: Colors.black, // Set text color to white
+             Spacer(),
+              Column(
+                children: [
+                  // Login Button
+                  ElevatedButton(
+                    onPressed: () {
+                      Navigator.pushNamed(context, Routes.login);
+                    },
+                    style: ElevatedButton.styleFrom(
+                      backgroundColor: AppColors.primaryColor,
+                      padding: EdgeInsets.symmetric(vertical: 15.h),
+                      minimumSize: const Size(double.infinity, 40),
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(8.r),
                       ),
-                ),
-                InkWell(
-                  onTap: () {
-                    Navigator.pushReplacementNamed(context, Routes.signUp);
-                  },
-                  child: Text(
-                    "Sign up",
-                    style: Theme.of(context).textTheme.bodyLarge?.copyWith(
-                          fontWeight: FontWeight.w700,
-                          color: AppColors.primaryColor,
-                        ),
+                    ),
+                    child: Text(
+                      'Log In',
+                      style: context.textTheme.labelLarge?.copyWith(
+                        color: AppColors.white,
+                      ),
+                    ),
                   ),
+                  SizedBox(height: 15.h),
+
+                  // Sign Up Button
+                  OutlinedButton(
+                    onPressed: () {
+                      Navigator.pushNamed(context, Routes.signUp);
+                    },
+                    style: OutlinedButton.styleFrom(
+                      side: BorderSide(color: AppColors.primaryColor),
+                      padding: EdgeInsets.symmetric(vertical: 15.h),
+                      minimumSize: const Size(double.infinity, 40),
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(8.r),
+                      ),
+                    ),
+                    child: Text(
+                      'Sign Up',
+                      style: context.textTheme.labelLarge?.copyWith(
+                        color: AppColors.primaryColor,
+                      ),
+                    ),
+                  ),
+                  SizedBox(height: 30.h),
+
+                  // Explore Without Login
+                 Text.rich(
+                TextSpan(
+                  text: 'By continuing you agree to PayBiz\'s ',
+                  children: [
+                    TextSpan(
+                      text: 'Terms of Service',
+                      recognizer: TapGestureRecognizer()
+                        ..onTap = () {
+                          // Open Terms of Service
+                        },
+                    ),
+                    const TextSpan(
+                      text: ' and ',
+                    ),
+                    TextSpan(
+                      text: 'Privacy Policy',
+                      style: const TextStyle(
+                        color: AppColors.lightBlue
+                      ),
+                      recognizer: TapGestureRecognizer()
+                        ..onTap = () {
+                         print("Need a policy page");
+                        },
+                    ),
+                    const TextSpan(text: '.'),
+                  ],
                 ),
-              ],
-            ),
-          ],
+                textAlign: TextAlign.center,
+              ),
+                ],
+              ),
+            ],
+          ),
         ),
       ),
     );
