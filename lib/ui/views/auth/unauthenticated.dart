@@ -23,7 +23,7 @@ class UnauthenticatedView extends StatelessWidget {
                 child: Column(
                   children: [
                     Image.asset(
-                      'assets/images/onboard1.PNG',
+                      'assets/images/unauthview.PNG',
                       height: 350.h,
                     ),
                   ],
